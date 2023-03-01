@@ -22,15 +22,24 @@
   //   i++
   // }
   
-  for (let i = 0; i < 500; i++) {
-     if (Math.random() > 0.5) {
-    	document.body.innerText += '／'
+
+  function draw () {
+    requestAnimationFrame(draw)
+    //const fps = 1000 / 24
+    //setTimeout(draw, fps) do this or ^^
+    let ran = Math.random()
+  	if (ran > 0.5) {
+    document.body.innerText += '／'
   	} else {
     	document.body.innerText += '＼'
-    
   	}
-
+    document.body.scrollTop = document.body.scrollHeight
   }
+    	
+	draw()
+ 
+
+  
   
  
 
